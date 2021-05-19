@@ -1,0 +1,2 @@
+# MyNews
+NativeScript + Angular app.
