@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core'
-
-import { Item } from './item'
-import { ItemService } from './item.service'
+import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../services/news.service';
+import { News } from '../models/news';
 
 @Component({
   selector: 'ns-items',
   templateUrl: './items.component.html',
 })
 export class ItemsComponent implements OnInit {
-  items: Array<Item>
+  news: Array<News>;
 
-  constructor(private itemService: ItemService) {}
+  constructor(private itemService: NewsService) { }
 
   ngOnInit(): void {
-    this.items = this.itemService.getItems()
+    this.itemService.getNews().then((result: string) => {
+      this.news = JSON.parse(result);
+      this.itemService.setNews(this.news);
+    }, error => console.error(error));
   }
 }

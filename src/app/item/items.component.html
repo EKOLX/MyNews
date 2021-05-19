@@ -1,9 +1,9 @@
-<ActionBar title="News"> </ActionBar>
+<ActionBar title="LATEST NEWS"> </ActionBar>
 <GridLayout>
-  <ListView [items]="items">
+  <ListView [items]="news">
     <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['/item', item.id]">
-        <Label [text]="item.name"></Label>
+      <StackLayout [nsRouterLink]="['/item', item.post_ID]">
+        <Label [text]="item.post_title"></Label>
       </StackLayout>
     </ng-template>
   </ListView>
