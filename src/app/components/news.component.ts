@@ -4,9 +4,9 @@ import { News } from '../models/news';
 
 @Component({
   selector: 'ns-items',
-  templateUrl: './items.component.html',
+  templateUrl: './news.component.html',
 })
-export class ItemsComponent implements OnInit {
+export class NewsComponent implements OnInit {
   news: Array<News>;
 
   constructor(private itemService: NewsService) { }
@@ -17,4 +17,5 @@ export class ItemsComponent implements OnInit {
       this.itemService.setNews(this.news);
     }, error => console.error(error));
   }
+
 }

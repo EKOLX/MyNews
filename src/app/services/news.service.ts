@@ -6,11 +6,12 @@ import { News } from '../models/news';
   providedIn: 'root',
 })
 export class NewsService {
+  private api: string = "https://www.haultail.com/wp-json/haultail_news/v1/posts";
   private newsCount: number = 10;
   private news: News[];
 
   getNews(): Promise<string> {
-    return Http.getString(`https://www.haultail.com/wp-json/haultail_news/v1/posts/${this.newsCount}/0`);
+    return Http.getString(`${this.api}/${this.newsCount}/0`);
   }
 
   setNews(news: News[]): void {

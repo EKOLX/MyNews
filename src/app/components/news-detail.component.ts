@@ -5,9 +5,9 @@ import { News } from '../models/news';
 
 @Component({
   selector: 'ns-details',
-  templateUrl: './item-detail.component.html',
+  templateUrl: './news-detail.component.html',
 })
-export class ItemDetailComponent implements OnInit {
+export class NewsDetailComponent implements OnInit {
   news: News;
 
   constructor(private newsService: NewsService, private route: ActivatedRoute) { }

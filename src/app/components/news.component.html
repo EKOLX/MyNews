@@ -1,0 +1,14 @@
+<ActionBar title="LATEST NEWS"> </ActionBar>
+
+<ListView [items]="news" height="{{news?.length * 190}}" separatorColor="transparent">
+  <ng-template let-item="item">
+    <GridLayout columns="2*, 3*" rows="30, 120, 30" [nsRouterLink]="['/news', item.post_ID]">
+      <Image col="0" row="0" rowSpan="2" height="100%" stretch="aspectFill" [src]="item.post_thumbnail"></Image>
+      <Label col="1" row="0" [text]="item.post_date | date: 'dd MMM yyyy'" class="h3"></Label>
+      <Label col="1" row="1" [text]="item.post_title" textWrap="true" verticalAlignment="top" class="h2"
+        fontWeight="bold"></Label>
+      <StackLayout col=0 colSpan="2" row="2" backgroundColor="#3498db" height="100%" marginTop="10">
+      </StackLayout>
+    </GridLayout>
+  </ng-template>
+</ListView>

@@ -1,0 +1,12 @@
+<ActionBar title="LATEST NEWS"></ActionBar>
+
+<ScrollView>
+  <GridLayout columns="*" rows="250, 40, auto, *" paddingBottom="25">
+    <Image row="0" height="100%" stretch="aspectFill" [src]="news.post_image"></Image>
+    <Label row="1" class="h3 m-25" [text]="news.post_date | date: 'dd MMM yyyy'"></Label>
+    <Label row="2" class="h2 m-25" [text]="news.post_title" textWrap="true" verticalAlignment="top"
+      fontWeight="bold"></Label>
+    <HtmlView row="3" class="h4 m-25" [html]="news.post_content" height="100%" textWrap="true" verticalAlignment="top">
+    </HtmlView>
+  </GridLayout>
+</ScrollView>
